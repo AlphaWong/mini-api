@@ -9,7 +9,7 @@ We want to build a simple API interface prototype
 
 ## Steps
 1. Fork this repository
-2. Create branch from a previous commit id of master: `git branch -b dev 9a09dc2f77e2551bb764c86f9269543442007606`
+2. Create branch from a previous commit id of master: `git checkout -b dev 9a09dc2f77e2551bb764c86f9269543442007606`
 3. Add the following piece of code on dev and merge the branch to main via pull request, for the sake of health-checking:
 ```python
 @app.route("/health")
