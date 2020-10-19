@@ -1,0 +1,34 @@
+# deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mini-api
+  labels:
+    component: python
+    tier: backend
+spec:
+  selector:
+    matchLabels:
+      component: python
+      tier: backend
+  template:
+    metadata:
+      labels:
+        component: python
+        tier: backend
+    spec:
+      containers:
+        - name: mini-api
+          image: mini-api
+          env:
+            # Define the environment variable
+            - name: FLASK_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: dev.env
+                  key: FLASK_PORT
+            - name: API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: dev.key
+                  key: API_KEY
