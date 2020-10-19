@@ -7,6 +7,7 @@ app = Flask(__name__)
 port = environ.get('FLASK_PORT', 5000)
 api_key = environ.get('API_KEY')
 
+
 @app.route('/', methods=['GET'])
 def hello_world():
     sleep(5)
@@ -14,6 +15,12 @@ def hello_world():
         return 'Unauthorized', 401
     else:
         return 'Hello, World!', 200
+
+
+@app.route("/health")
+def health_check():
+    return "", 200
+
 
 if __name__ == '__main__':
     if (api_key is None):
