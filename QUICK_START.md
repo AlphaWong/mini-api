@@ -19,3 +19,8 @@ docker build . -t mini-api:0.0.0
 # replace MY_KEY with your own key
 docker run -e API_KEY="MY_KEY" -p 8080:5000 mini-api:0.0.0
 ```
+
+# reference
+1. https://github.com/docker/login-action
+1. https://github.com/marketplace/actions/build-and-push-docker-images
+1. 
