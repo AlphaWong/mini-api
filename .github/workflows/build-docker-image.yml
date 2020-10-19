@@ -21,7 +21,7 @@ jobs:
       - name: Prepare
         id: prep
         run: |
-          DOCKER_IMAGE=ghcr.io/alphawong/mini-api/mini-api
+          DOCKER_IMAGE=ghcr.io/alphawong/mini-api
           VERSION=noop
           if [ "${{ github.event_name }}" = "schedule" ]; then
             VERSION=nightly
@@ -58,5 +58,7 @@ jobs:
         with:
           push: true
           tags: ${{ steps.prep.outputs.tags }}
+      - name: Image name
+        run: echo ${{ steps.prep.outputs.tags }}
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
