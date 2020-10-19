@@ -23,4 +23,4 @@ docker run -e API_KEY="MY_KEY" -p 8080:5000 mini-api:0.0.0
 # reference
 1. https://github.com/docker/login-action
 1. https://github.com/marketplace/actions/build-and-push-docker-images
-1. 
+1. https://docs.github.com/en/free-pro-team@latest/packages/getting-started-with-github-container-registry/migrating-to-github-container-registry-for-docker-images#authenticating-with-the-container-registry
