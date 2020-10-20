@@ -22,3 +22,15 @@ configMapGenerator:
 secretGenerator:
   - name: dev.key
     env: dev-key.env
+
+vars:
+  - name: APP_PORT
+    objref:
+      kind: ConfigMap
+      name: dev.env
+      apiVersion: v1
+    fieldref:
+      fieldpath: data.FLASK_PORT
+
+configurations:
+  - kustomizeconfig.yaml
