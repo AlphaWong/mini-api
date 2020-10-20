@@ -4,8 +4,8 @@ kind: Kustomization
 
 # list of Resource Config to be Applied
 resources:
-  - ./deployment.yaml
-  - ./service.yaml
+  - ./mini-api-deployment.yaml
+  - ./mini-api-svc.yaml
 
 namespace: default
 commonLabels:
@@ -32,13 +32,6 @@ vars:
       apiVersion: v1
     fieldref:
       fieldpath: data.FLASK_PORT
-  - name: BACKEND_APP_NAME
-    objref:
-      kind: Deployment
-      name: mini-api
-      apiVersion: apps/v1
-    fieldref:
-      fieldpath: metadata.name
 
 configurations:
   - kustomizeconfig.yaml
