@@ -41,6 +41,18 @@ minikube start --vm-driver=hyperkit
 minikube service mini-api-service --url
 ```
 
+# visit argocd without domain
+```console
+kubectl port-forward svc/argocd-server -n argocd 8080:443
+```
+
+# password
+```
+# kubectl get pods -n argocd -l app.kubernetes.io/name=argocd-server -o name | cut -d'/' -f 2
+account: admin
+password: argocd-server-5bc896856-tv4qc
+```
+
 # reference
 1. https://github.com/docker/login-action
 1. https://github.com/marketplace/actions/build-and-push-docker-images
