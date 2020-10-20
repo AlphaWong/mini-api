@@ -14,10 +14,10 @@ commonLabels:
 
 namePrefix: backend-
 
-images:
-  - name: mini-api # match images with this name
-    newTag: sha-901df06c # override the tag
-    newName: ghcr.io/alphawong/mini-api # override the name
+# images:
+#   - name: mini-api # match images with this name
+#     newTag: sha-901df06c # override the tag
+#     newName: ghcr.io/alphawong/mini-api # override the name
 
 configMapGenerator:
   - name: dev.env
