@@ -47,20 +47,28 @@ kubectl port-forward svc/argocd-server -n argocd 8080:443
 ```
 
 # password
-```
-# kubectl get pods -n argocd -l app.kubernetes.io/name=argocd-server -o name | cut -d'/' -f 2
+```console
+export PASSWORD=$(kubectl get pods -n argocd -l app.kubernetes.io/name=argocd-server -o name | cut -d'/' -f 2)
 account: admin
-password: argocd-server-5bc896856-tv4qc
+password: $PASSWORD
 ```
 
 # replace the `MY_KEY`
-```
+```yaml
 # kustomization.yaml
 secretGenerator:
   - name: dev.key
     literals:
       - API_KEY=MY_KEY
 ```
+
+# expose the service at live with `port-forward`
+As nginx-ingress controller and `LoadBalancer` cannot get the external ip.
+```console
+kk port-forward mini-api-service -p 8888:8080
+```
+## postman connection for testing
+postman collection: https://www.getpostman.com/collections/b13f03bf0882d3f7397c
 
 # reference
 1. https://github.com/docker/login-action
