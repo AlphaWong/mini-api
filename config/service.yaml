@@ -8,11 +8,11 @@ metadata:
 spec:
   ports:
     - port: 8080
-      protocol: TCP
-      targetPort: $(APP_PORT)
-      nodePort: 8080
   selector:
-    name: $(BACKEND_APP_NAME)
-  type: NodePort
+    app: mini-api
+    component: python
+    env: dev
+    tier: backend
+  type: LoadBalancer
 status:
   loadBalancer: {}

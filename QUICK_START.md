@@ -22,12 +22,23 @@ docker run -e API_KEY="MY_KEY" -p 8080:5000 mini-api:0.0.0
 
 # kustomize dry-run
 ```console
-kubectl apply -k . --dry-run=client -o yaml
+kubectl apply -k ./config --dry-run=client -o yaml
 ```
 
 # replace key from dev-key via 
 ```console
 MY_KEY=MY_KEY envsubst '${MY_KEY}' < ./dev-key.env
+```
+
+# Minikube issue
+https://github.com/kubernetes/minikube/issues/7344
+```console
+minikube start --vm-driver=hyperkit
+```
+
+# expose LoadBalancer in minikube
+```console
+minikube service mini-api-service --url
 ```
 
 # reference
@@ -39,3 +50,4 @@ MY_KEY=MY_KEY envsubst '${MY_KEY}' < ./dev-key.env
 1. https://github.com/kubernetes-sigs/kustomize/issues/2704
 1. https://github.com/kubernetes-sigs/kustomize/blob/master/examples/transformerconfigs/crd/README.md
 1. https://github.com/kubernetes-sigs/kustomize/issues/1250#issuecomment-505455209
+1. https://github.com/kubernetes/minikube/issues/7344#issuecomment-688179776

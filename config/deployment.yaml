@@ -20,12 +20,14 @@ spec:
       containers:
         - name: mini-api
           image: mini-api
+          ports:
+            - containerPort: 8080
           livenessProbe:
             httpGet:
-              path: /
-              port: $(APP_PORT)
+              path: /health
+              port: 8080
             initialDelaySeconds: 3
-            periodSeconds: 3
+            periodSeconds: 180
           env:
             # Define the environment variable
             - name: FLASK_PORT
