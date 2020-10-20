@@ -25,7 +25,7 @@ docker run -e API_KEY="MY_KEY" -p 8080:5000 mini-api:0.0.0
 kubectl apply -k ./config --dry-run=client -o yaml
 ```
 
-# replace key from dev-key via 
+# replace key with envsubst
 ```console
 MY_KEY=MY_KEY envsubst '${MY_KEY}' < ./dev-key.env
 ```
@@ -51,6 +51,15 @@ kubectl port-forward svc/argocd-server -n argocd 8080:443
 # kubectl get pods -n argocd -l app.kubernetes.io/name=argocd-server -o name | cut -d'/' -f 2
 account: admin
 password: argocd-server-5bc896856-tv4qc
+```
+
+# replace the `MY_KEY`
+```
+# kustomization.yaml
+secretGenerator:
+  - name: dev.key
+    literals:
+      - API_KEY=MY_KEY
 ```
 
 # reference
