@@ -1,3 +1,5 @@
+![build-docker-image](https://github.com/AlphaWong/mini-api/workflows/build-docker-image/badge.svg)
+
 # start
 ```console
 pipenv install -r ./requirements.txt
@@ -63,12 +65,15 @@ secretGenerator:
 ```
 
 # expose the service at live with `port-forward`
-As nginx-ingress controller and `LoadBalancer` cannot get the external ip.
+As nginx-ingress controller and `LoadBalancer` cannot get any external ip.
 ```console
 kk port-forward mini-api-service -p 8888:8080
 ```
 ## postman connection for testing
 postman collection: https://www.getpostman.com/collections/b13f03bf0882d3f7397c
+
+# screenshot
+![preview](https://upload.cc/i1/2020/10/20/1K9FTv.png)
 
 # reference
 1. https://github.com/docker/login-action
@@ -80,3 +85,6 @@ postman collection: https://www.getpostman.com/collections/b13f03bf0882d3f7397c
 1. https://github.com/kubernetes-sigs/kustomize/blob/master/examples/transformerconfigs/crd/README.md
 1. https://github.com/kubernetes-sigs/kustomize/issues/1250#issuecomment-505455209
 1. https://github.com/kubernetes/minikube/issues/7344#issuecomment-688179776
+
+# question?
+ping me via `wck.alpha@gmail.com`
