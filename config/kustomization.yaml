@@ -12,6 +12,8 @@ commonLabels:
   app: mini-api
   env: dev
 
+namePrefix: backend-
+
 images:
   - name: mini-api # match images with this name
     newTag: sha-901df06c # override the tag
