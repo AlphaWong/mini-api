@@ -1,3 +1,7 @@
 varReference:
   - path: spec/template/spec/containers/livenessProbe/httpGet/port
     kind: Deployment
+  - path: spec/ports/targetPort
+    kind: Service
+  - path: spec/selector/name
+    kind: Service

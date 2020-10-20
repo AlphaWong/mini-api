@@ -36,3 +36,6 @@ MY_KEY=MY_KEY envsubst '${MY_KEY}' < ./dev-key.env
 1. https://docs.github.com/en/free-pro-team@latest/packages/getting-started-with-github-container-registry/migrating-to-github-container-registry-for-docker-images#authenticating-with-the-container-registry
 1. https://kubectl.docs.kubernetes.io/pages/app_management/secrets_and_configmaps.html
 1. https://unix.stackexchange.com/a/294400
+1. https://github.com/kubernetes-sigs/kustomize/issues/2704
+1. https://github.com/kubernetes-sigs/kustomize/blob/master/examples/transformerconfigs/crd/README.md
+1. https://github.com/kubernetes-sigs/kustomize/issues/1250#issuecomment-505455209
