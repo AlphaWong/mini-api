@@ -19,10 +19,10 @@ images:
 
 configMapGenerator:
   - name: dev.env
-    env: "env/dev.env"
+    env: "environment/dev.env"
 secretGenerator:
   - name: dev.key
-    env: "env/dev-key.env"
+    env: "environment/dev-key.env"
 
 vars:
   - name: APP_PORT
