@@ -75,6 +75,11 @@ postman collection: https://www.getpostman.com/collections/b13f03bf0882d3f7397c
 # screenshot
 ![preview](https://upload.cc/i1/2020/10/20/1K9FTv.png)
 
+# docker tagging bash
+1. https://github.com/marketplace/actions/docker-buildx
+1. https://github.com/crazy-max/ghaction-docker-meta
+1. https://github.com/docker/build-push-action/blob/b072fc7faeea2e4a6cae4636dadbd68b9deca04b/.github/workflows/example.yml
+
 # reference
 1. https://github.com/docker/login-action
 1. https://github.com/marketplace/actions/build-and-push-docker-images
