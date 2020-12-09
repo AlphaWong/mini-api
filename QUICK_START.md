@@ -80,6 +80,9 @@ postman collection: https://www.getpostman.com/collections/b13f03bf0882d3f7397c
 1. https://github.com/crazy-max/ghaction-docker-meta
 1. https://github.com/docker/build-push-action/blob/b072fc7faeea2e4a6cae4636dadbd68b9deca04b/.github/workflows/example.yml
 
+# github action multiline issue
+1. https://github.com/actions/toolkit/issues/403#issuecomment-671076570
+
 # reference
 1. https://github.com/docker/login-action
 1. https://github.com/marketplace/actions/build-and-push-docker-images
